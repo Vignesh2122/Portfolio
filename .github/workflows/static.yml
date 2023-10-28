@@ -1,0 +1,33 @@
+name: Deploy Portfolio Website
+
+on:
+  push:
+    branches:
+      - main # You can change this to your main branch name
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build and Deploy
+        run: |
+          # Add commands here to build your website if needed
+          # For example, if you're using a static site generator like Jekyll
+          # bundle install
+          # bundle exec jekyll build
+          # Or if you're just copying static files
+          # cp -R source-directory/* destination-directory
+
+      - name: Deploy to GitHub Pages
+        run: |
+          git config --global user.name "Your GitHub Username"
+          git config --global user.email "your.email@example.com"
+          git checkout main # Change 'main' to your branch name if needed
+          git add .
+          git commit -m "Auto-deploy website"
+          git push
+
