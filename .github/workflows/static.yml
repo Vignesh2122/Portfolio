@@ -22,12 +22,4 @@ jobs:
           # Or if you're just copying static files
           # cp -R source-directory/* destination-directory
 
-      - name: Deploy to GitHub Pages
-        run: |
-          git config --global user.name "Your GitHub Username"
-          git config --global user.email "your.email@example.com"
-          git checkout main # Change 'main' to your branch name if needed
-          git add .
-          git commit -m "Auto-deploy website"
-          git push
 
